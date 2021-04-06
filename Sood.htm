@@ -2,13 +2,10 @@
 <html>
 
 <head>
-    <title>Deeps</title>
+    <title>Mohasebe Soode Boland Modat</title>
 </head>
 
 <body>
-
-    <h2>Mohasebe Soode Boland Modat</h2>
-
     <label>Pool:</label><br />
     <input type="number" id="pool" value="1000" /><br /><br />
 
@@ -18,17 +15,15 @@
     <label>Mah:</label><br />
     <input type="number" id="mah" value="1" /><br /><br />
 
-    <label id="result">0</label><label style="color: #00f;">$</label><br /><br />
+    <label id="result">0</label>
+    <label style="color: #00f; font-weight: bold;">$</label><br /><br />
 
     <button type="button" onclick="Mohasebe()">Mohasebe</button>
 
     <script>
         function MSood(dollar, darsad, mah) {
-            var curMah;
-            curMah = parseInt(dollar) + parseInt(dollar * darsad / 100);
-
+            var curMah = parseInt(dollar) + parseInt(dollar * darsad / 100);
             if (mah <= 1) { return curMah; }
-
             return MSood(curMah, darsad, mah - 1);
         }
 
@@ -36,7 +31,6 @@
             var pool = document.getElementById('pool').value;
             var darsad = document.getElementById('darsad').value;
             var mah = document.getElementById('mah').value;
-
             document.getElementById('result').innerHTML = MSood(pool, darsad, mah);
         }
     </script>
